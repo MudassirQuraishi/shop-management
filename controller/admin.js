@@ -20,7 +20,7 @@ exports.buyProduct = async(req,res,next) =>{
     try{
         const id = req.params.id;
         const newValue = req.body.newValue;
-        console.log(newValue);
+        
         const item = await Product.findByPk(id);
         const oldquantity = item.dataValues.quantity;
         const updatedQuantity = oldquantity-newValue;
